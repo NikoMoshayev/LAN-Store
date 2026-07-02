@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://verbose-spoon-qjjekqj.pages.github.io/#store -->
+<html lang="en" class="light-theme" style="filter: none !important;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins</title>
+    <meta name="description" content="A community hub for skills, instructions, agents, prompt templates, and plugins.">
+    <link rel="icon" type="image/png" href="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/forge_noBG.png">
+    <link rel="stylesheet" href="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/styles.css">
+    <script>
+        // Apply theme before first paint to prevent dark→light flash
+        (function(){try{var t=localStorage.getItem('forge-store-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark-theme':'light-theme'}document.documentElement.classList.add(t)}catch(e){}})();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/css2" rel="stylesheet">
+</head>
+<body class="light-theme" style="">
+    <!-- ============================================================
+         Top Navigation
+         ============================================================ -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="header-left">
+                <a href="https://verbose-spoon-qjjekqj.pages.github.io/#" class="logo" onclick="resetFilters(); scrollToTop(); return false;">
+                    <img src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/forge_noBG.png" alt="Forge Store Logo" class="logo-img">
+                    <span class="logo-text">Forge Store</span>
+                </a>
+                <nav class="nav">
+                    <button class="nav-link dropdown-toggle" id="browse-store-toggle" aria-expanded="false">Store <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <button class="nav-link dropdown-toggle" id="contribute-toggle" aria-expanded="false">Contribute <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                    <a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/blob/main/docs/EASY_USE.md" class="nav-link">Help</a>
+                    <a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+                    <a href="https://engage.cloud.microsoft/main/org/intel.com/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIyNDY3NTMzNzAxMTIifQ/all" target="_blank" rel="noopener noreferrer" class="nav-link">Community</a>
+                </nav>
+            </div>
+            
+            <div class="header-right">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" aria-pressed="false" title="Toggle dark/light theme">
+                    <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <!-- Mobile hamburger -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Single shared mega panel with swappable content panes -->
+    <div class="mega-panel" id="mega-panel">
+        <!-- Browse Store pane -->
+        <div class="mega-pane active" id="pane-browse">
+            <div class="mega-panel-inner">
+                <div class="mega-left">
+                    <h3 class="mega-heading">Browse Store</h3>
+                    <p class="mega-subtext">Discover community-built artifacts for your AI-powered IDE.</p>
+                    <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="mega-browse-btn" id="mega-browse-all">View all artifacts <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+                </div>
+                <div class="mega-right">
+                    <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="mega-item" data-filter="skills">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>
+                        <span class="mega-item-label">Skills</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="mega-item" data-filter="prompts">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="8" y1="8" x2="16" y2="8"></line><line x1="8" y1="12" x2="13" y2="12"></line></svg></span>
+                        <span class="mega-item-label">Prompts</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="mega-item" data-filter="instructions">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path><rect x="9" y="2" width="6" height="4" rx="1"></rect><path d="m9 14 2 2 4-4"></path></svg></span>
+                        <span class="mega-item-label">Instructions</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="mega-item" data-filter="custom-agents">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="10" rx="2"></rect><path d="M9 8V6a3 3 0 0 1 6 0v2"></path><circle cx="9.5" cy="13.5" r="1"></circle><circle cx="14.5" cy="13.5" r="1"></circle></svg></span>
+                        <span class="mega-item-label">Agents</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="mega-item" data-filter="mcp-servers">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"><path d="M18 84.8528L85.8822 16.9706C95.2548 7.59798 110.451 7.59798 119.823 16.9706C129.196 26.3431 129.196 41.5391 119.823 50.9117L68.5581 102.177"></path><path d="M69.2652 101.47L119.823 50.9117C129.196 41.5391 144.392 41.5391 153.765 50.9117L154.118 51.2652C163.491 60.6378 163.491 75.8338 154.118 85.2063L92.7248 146.6C89.6006 149.724 89.6006 154.789 92.7248 157.913L105.331 170.52"></path><path d="M102.853 33.9411L52.6482 84.1457C43.2756 93.5183 43.2756 108.714 52.6482 118.087C62.0208 127.459 77.2167 127.459 86.5893 118.087L136.794 67.8822"></path></svg></span>
+                        <span class="mega-item-label">MCP Servers</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="mega-item" data-filter="plugins">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 2h-1a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v3.5H3.5a2 2 0 0 0 0 4H5V18a2 2 0 0 0 2 2h3.5v1.5a2 2 0 0 0 4 0V20H18a2 2 0 0 0 2-2v-3.5h1.5a2 2 0 0 0 0-4H20V7a2 2 0 0 0-2-2h-2.5V4a2 2 0 0 0-2-2z"></path></svg></span>
+                        <span class="mega-item-label">Plugins</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Contribute pane -->
+        <div class="mega-pane" id="pane-contribute">
+            <div class="mega-panel-inner">
+                <div class="mega-left">
+                    <h3 class="mega-heading">Contribute</h3>
+                    <p class="mega-subtext">Share your artifacts with the community.<br>Submit via Easy Contribute — no repo clone needed.</p>
+                    <a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/blob/main/docs/EASY_CONTRIBUTE.md" target="_blank" rel="noopener noreferrer" class="mega-browse-btn">How to contribute <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+                </div>
+                <div class="mega-right">
+                    <a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/issues/new?template=submit-skill.yml" target="_blank" rel="noopener noreferrer" class="mega-item">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>
+                        <span class="mega-item-label">Submit Skill</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/issues/new?template=submit-prompt.yml" target="_blank" rel="noopener noreferrer" class="mega-item">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="8" y1="8" x2="16" y2="8"></line><line x1="8" y1="12" x2="13" y2="12"></line></svg></span>
+                        <span class="mega-item-label">Submit Prompt Template</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/issues/new?template=submit-instruction.yml" target="_blank" rel="noopener noreferrer" class="mega-item">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path><rect x="9" y="2" width="6" height="4" rx="1"></rect><path d="m9 14 2 2 4-4"></path></svg></span>
+                        <span class="mega-item-label">Submit Instruction Set</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/issues/new?template=submit-custom-agent.yml" target="_blank" rel="noopener noreferrer" class="mega-item">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="10" rx="2"></rect><path d="M9 8V6a3 3 0 0 1 6 0v2"></path><circle cx="9.5" cy="13.5" r="1"></circle><circle cx="14.5" cy="13.5" r="1"></circle></svg></span>
+                        <span class="mega-item-label">Submit Custom Agent</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/issues/new?template=submit-mcp-server-file.yml" target="_blank" rel="noopener noreferrer" class="mega-item">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"><path d="M18 84.8528L85.8822 16.9706C95.2548 7.59798 110.451 7.59798 119.823 16.9706C129.196 26.3431 129.196 41.5391 119.823 50.9117L68.5581 102.177"></path><path d="M69.2652 101.47L119.823 50.9117C129.196 41.5391 144.392 41.5391 153.765 50.9117L154.118 51.2652C163.491 60.6378 163.491 75.8338 154.118 85.2063L92.7248 146.6C89.6006 149.724 89.6006 154.789 92.7248 157.913L105.331 170.52"></path><path d="M102.853 33.9411L52.6482 84.1457C43.2756 93.5183 43.2756 108.714 52.6482 118.087C62.0208 127.459 77.2167 127.459 86.5893 118.087L136.794 67.8822"></path></svg></span>
+                        <span class="mega-item-label">Submit File-Based MCP Server</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/issues/new?template=submit-mcp-server-remote.yml" target="_blank" rel="noopener noreferrer" class="mega-item">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12a10 10 0 1 0-20 0 10 10 0 0 0 20 0z"></path><path d="M2 12h20"></path><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10A15 15 0 0 1 12 2z"></path></svg></span>
+                        <span class="mega-item-label">Submit Remote MCP Server</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                    <a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="mega-item">
+                        <span class="mega-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 2h-1a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v3.5H3.5a2 2 0 0 0 0 4H5V18a2 2 0 0 0 2 2h3.5v1.5a2 2 0 0 0 4 0V20H18a2 2 0 0 0 2-2v-3.5h1.5a2 2 0 0 0 0-4H20V7a2 2 0 0 0-2-2h-2.5V4a2 2 0 0 0-2-2z"></path></svg></span>
+                        <span class="mega-item-label">Submit Plugin (open a PR)</span>
+                        <svg class="mega-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mega-overlay" id="mega-overlay"></div>
+
+    <main>
+        <!-- ============================================================
+             Hero — Full-viewport landing (antigravity-style)
+             ============================================================ -->
+        <section class="hero-landing" id="hero">
+            <canvas class="hero-particles" id="hero-particles" aria-hidden="true" width="1350" height="847" style="width: 1350px; height: 847px;"></canvas>
+            <div class="hero-bg-grid" aria-hidden="true"></div>
+            <div class="container hero-landing-inner">
+                <p class="hero-eyebrow">Open-source · Community-driven · Beta</p>
+                <h1 class="hero-headline">
+                    <span id="typed-line1">Supercharge your</span><br>
+                    <span class="hero-gradient-text" id="typed-line2">AI-powered IDE</span><span class="typing-cursor hidden" id="typing-cursor">|</span>
+                </h1>
+                <p class="hero-tagline" id="typed-tagline" style="opacity: 1;">
+                    Skills, prompts, instructions, agents &amp; plugins — install in one click from VS Code, Cursor, or Visual Studio 2026.
+                </p>
+                <div class="hero-cta-row hero-fade-in visible" id="hero-ctas">
+                    <div class="hero-cta-downloads">
+                        <button onclick="openInstallModal(&#39;vscode&#39;)" class="btn-hero-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Download for VS Code
+                        </button>
+                        <button onclick="openInstallModal(&#39;cursor&#39;)" class="btn-hero-secondary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Download for Cursor
+                        </button>
+                        <button onclick="openInstallModal(&#39;vs2026&#39;)" class="btn-hero-secondary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Download for VS 2026
+                        </button>
+                    </div>
+                    <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="btn-hero-outline">Browse Store</a>
+                </div>
+                <div class="hero-ext-logos hero-fade-in visible" id="hero-logos">
+                    <img src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/vscode1.png" alt="VS Code" class="hero-ext-icon" title="VS Code Extension">
+                    <img src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/cursor.svg" alt="Cursor" class="hero-ext-icon" title="Cursor Extension">
+                    <img src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/vs1.png" alt="Visual Studio 2026" class="hero-ext-icon" title="Visual Studio 2026 Extension">
+                </div>
+            </div>
+            <!-- Floating keyword scroller (aesthetic only) -->
+            <div class="hero-keyword-track" aria-hidden="true">
+                <div class="hero-keyword-scroll">
+                    <span>skills</span><span>prompts</span><span>instructions</span><span>agents</span><span>plugins</span><span>copilot</span><span>automation</span><span>productivity</span><span>skills</span><span>prompts</span><span>instructions</span><span>agents</span><span>plugins</span><span>copilot</span><span>automation</span><span>productivity</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             Features section — antigravity-style typed vision
+             ============================================================ -->
+        <section class="features-section reveal visible" id="features">
+            <div class="container features-inner">
+                <!-- Typed vision headline -->
+                <h2 class="features-headline">
+                    <span id="forge-typed-line1">Forge your work</span><br>
+                    <span class="hero-gradient-text" id="forge-typed-line2">agentic workflows</span><span class="typing-cursor hidden" id="forge-cursor">|</span>
+                </h2>
+                <p class="features-tagline" id="forge-tagline" style="opacity: 1;">
+                    Your one-stop shop for agentic artifacts — skills, prompts, instructions, agents, MCP servers &amp; plugins.
+                </p>
+
+                <!-- Title + tagline above the artifact cards -->
+                <div class="forge-explorer hero-fade-in visible" id="forge-grid">
+                    <div class="forge-explorer-head">
+                        <h3 class="forge-explorer-title">What's inside the Forge</h3>
+                        <p class="forge-explorer-desc">Six artifact types, ready to drop into your workflow. Customize and scale your AI automation effortlessly.</p>
+                    </div>
+                    <div class="forge-explorer-grid">
+                        <!-- MCP -->
+                        <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="forge-feature-card" data-filter="mcp-servers" style="--c:#4ade80">
+                            <div class="fc-head">
+                                <span class="fc-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"><path d="M18 84.8528L85.8822 16.9706C95.2548 7.59798 110.451 7.59798 119.823 16.9706C129.196 26.3431 129.196 41.5391 119.823 50.9117L68.5581 102.177"></path><path d="M69.2652 101.47L119.823 50.9117C129.196 41.5391 144.392 41.5391 153.765 50.9117L154.118 51.2652C163.491 60.6378 163.491 75.8338 154.118 85.2063L92.7248 146.6C89.6006 149.724 89.6006 154.789 92.7248 157.913L105.331 170.52"></path><path d="M102.853 33.9411L52.6482 84.1457C43.2756 93.5183 43.2756 108.714 52.6482 118.087C62.0208 127.459 77.2167 127.459 86.5893 118.087L136.794 67.8822"></path></svg></span>
+                                <h4 class="fc-title">MCP Server</h4>
+                            </div>
+                            <p class="fc-desc">An open standard for connecting the AI to external tools and services.</p>
+                            <ul class="fc-list">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Exposes callable tools, such as file ops, databases &amp; APIs</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Can also provide resources and prompts</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Configured in <code>mcp.json</code>, local or remote (http)</li>
+                            </ul>
+                            <div class="fc-example"><strong>Example:</strong> The GitHub MCP server lets the agent work with issues, PRs &amp; Actions.</div>
+                        </a>
+
+                        <!-- Skill -->
+                        <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="forge-feature-card" data-filter="skills" style="--c:#a78bfa">
+                            <div class="fc-head">
+                                <span class="fc-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>
+                                <h4 class="fc-title">Skill</h4>
+                            </div>
+                            <p class="fc-desc">An open standard for a reusable task or workflow.</p>
+                            <ul class="fc-list">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Defined by a <code>SKILL.md</code> (name + when to use)</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Loaded only when relevant, or run via <code>/</code> command</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Bundles instructions with optional scripts &amp; resources</li>
+                            </ul>
+                            <div class="fc-example"><strong>Example:</strong> A <code>create-PR</code> skill that knows your team's PR format and opens it on GitHub.</div>
+                        </a>
+
+                        <!-- Custom Agent -->
+                        <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="forge-feature-card" data-filter="custom-agents" style="--c:#60a5fa">
+                            <div class="fc-head">
+                                <span class="fc-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="10" rx="2"></rect><path d="M9 8V6a3 3 0 0 1 6 0v2"></path><circle cx="9.5" cy="13.5" r="1"></circle><circle cx="14.5" cy="13.5" r="1"></circle></svg></span>
+                                <h4 class="fc-title">Custom Agent</h4>
+                            </div>
+                            <p class="fc-desc">A persona for a specific role, such as planner, reviewer, or architect. Defined in an <code>.agent.md</code> file you switch to in chat.</p>
+                            <ul class="fc-list">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Bundles its own instructions, tools &amp; model</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Restrict tools per role for safety (read-only planner)</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Subagents &amp; handoffs chain agents into workflows</li>
+                            </ul>
+                            <div class="fc-example"><strong>Example:</strong> A read-only "Planner" agent that drafts a plan, then hands off to an "Implementer".</div>
+                        </a>
+
+                        <!-- Prompt -->
+                        <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="forge-feature-card" data-filter="prompts" style="--c:#fb923c">
+                            <div class="fc-head">
+                                <span class="fc-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="8" y1="8" x2="16" y2="8"></line><line x1="8" y1="12" x2="13" y2="12"></line></svg></span>
+                                <h4 class="fc-title">Prompt</h4>
+                            </div>
+                            <p class="fc-desc">A common task encoded as a reusable slash command, invoked manually in chat.</p>
+                            <ul class="fc-list">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>A <code>.prompt.md</code> file you run from the <code>/</code> menu</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Simplifies common tasks: scaffolding, tests, or a PR</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Can override a custom agent's default behavior</li>
+                            </ul>
+                            <div class="fc-example"><strong>Example:</strong> A "prepare-PR" prompt that scaffolds the pull request the same way each time.</div>
+                        </a>
+
+                        <!-- Instructions -->
+                        <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="forge-feature-card" data-filter="instructions" style="--c:#22d3ee">
+                            <div class="fc-head">
+                                <span class="fc-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path><rect x="9" y="2" width="6" height="4" rx="1"></rect><path d="m9 14 2 2 4-4"></path></svg></span>
+                                <h4 class="fc-title">Instructions</h4>
+                            </div>
+                            <p class="fc-desc">Guidelines that the agent applies automatically to every request, so you don't repeat the same context each time.</p>
+                            <ul class="fc-list">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg><code>copilot-instructions.md</code> applies across the workspace</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg><code>.instructions.md</code> targets files via <code>applyTo</code> globs</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Good for coding standards, conventions &amp; tone</li>
+                            </ul>
+                            <div class="fc-example"><strong>Example:</strong> Instructions that enforce naming conventions and "always write surgical changes".</div>
+                        </a>
+
+                        <!-- Plugin -->
+                        <a href="https://verbose-spoon-qjjekqj.pages.github.io/#store" class="forge-feature-card" data-filter="plugins" style="--c:#f59e0b">
+                            <div class="fc-head">
+                                <span class="fc-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 2h-1a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v3.5H3.5a2 2 0 0 0 0 4H5V18a2 2 0 0 0 2 2h3.5v1.5a2 2 0 0 0 4 0V20H18a2 2 0 0 0 2-2v-3.5h1.5a2 2 0 0 0 0-4H20V7a2 2 0 0 0-2-2h-2.5V4a2 2 0 0 0-2-2z"></path></svg></span>
+                                <h4 class="fc-title">Plugin</h4>
+                            </div>
+                            <p class="fc-desc">One installable package that bundles the other customizations together.</p>
+                            <ul class="fc-list">
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Can contain skills, instructions, prompts, agents &amp; MCP servers</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Installs a complete capability in a single step</li>
+                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"></polyline></svg>Updates as one versioned package</li>
+                            </ul>
+                            <div class="fc-example"><strong>Example:</strong> A "GitHub workflow" plugin bundling a PR skill, review instructions, and a GitHub MCP server.</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             Store / Marketplace
+             ============================================================ -->
+        <section class="marketplace reveal visible" id="store">
+            <div class="container">
+                <!-- Store heading -->
+                <div class="store-header">
+                    <h2>Browse the Forge Store</h2>
+                    <p>Discover community-built artifacts — install directly from your IDE.</p>
+                </div>
+            </div>
+
+            <div class="container marketplace-layout">
+                <!-- Search + filters -->
+                <div class="store-toolbar">
+                    <div class="store-search-inline">
+                        <svg class="search-inline-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+                        <input type="text" id="search-input" placeholder="Search artifacts..." autocomplete="off">
+                    </div>
+                    <div class="filter-group" id="type-nav">
+                        <button class="filter-pill type-btn active" data-type="All">All</button>
+                        <button class="filter-pill type-btn" data-type="skills"><span class="type-dot" style="background:#a78bfa"></span>Skills</button>
+                        <button class="filter-pill type-btn" data-type="prompts"><span class="type-dot" style="background:#fb923c"></span>Prompts</button>
+                        <button class="filter-pill type-btn" data-type="mcp-servers"><span class="type-dot" style="background:#4ade80"></span>MCP Servers</button>
+                        <button class="filter-pill type-btn" data-type="instructions"><span class="type-dot" style="background:#22d3ee"></span>Instructions</button>
+                        <button class="filter-pill type-btn" data-type="custom-agents"><span class="type-dot" style="background:#60a5fa"></span>Agents</button>
+                        <button class="filter-pill type-btn" data-type="plugins"><span class="type-dot" style="background:#f59e0b"></span>Plugins</button>
+                    </div>
+                </div>
+                <!-- Secondary: category links -->
+                <div class="category-bar" id="category-nav"><button class="category-link active" data-category="All">All</button><button class="category-link" data-category="ATE Test TP">ATE Test TP</button><button class="category-link" data-category="Data Analysis">Data Analysis</button><button class="category-link" data-category="Productivity">Productivity</button><button class="category-link" data-category="SW">SW</button><button class="category-link" data-category="System Test TP">System Test TP</button><button class="category-link" data-category="Content">Content</button><button class="category-link" data-category="other">other</button></div>
+
+                <div class="content">
+                    <div class="content-header">
+                        <h2 id="content-title">All Resources</h2>
+                        <span class="content-count" id="content-count">91 items</span>
+                    </div>
+
+                    <!-- Mobile domain/type tabs -->
+                    <div class="mobile-filters" id="mobile-filters">
+                        <div class="mobile-tabs" id="mobile-category-tabs"><button class="mobile-tab active" data-category="All">All</button><button class="mobile-tab" data-category="ATE Test TP">ATE Test TP</button><button class="mobile-tab" data-category="Data Analysis">Data Analysis</button><button class="mobile-tab" data-category="Productivity">Productivity</button><button class="mobile-tab" data-category="SW">SW</button><button class="mobile-tab" data-category="System Test TP">System Test TP</button><button class="mobile-tab" data-category="Content">Content</button><button class="mobile-tab" data-category="other">other</button></div>
+                        <div class="mobile-tabs mobile-type-tabs" id="mobile-type-tabs">
+                            <button class="mobile-tab active" data-type="All">All Types</button>
+                            <button class="mobile-tab" data-type="skills">Skills</button>
+                            <button class="mobile-tab" data-type="prompts">Prompts</button>
+                            <button class="mobile-tab" data-type="mcp-servers">MCP Servers</button>
+                            <button class="mobile-tab" data-type="instructions">Instructions</button>
+                            <button class="mobile-tab" data-type="custom-agents">Agents</button>
+                            <button class="mobile-tab" data-type="plugins">Plugins</button>
+                        </div>
+                    </div>
+
+                    <div class="tile-grid" id="tile-grid"><div class="tile-card" data-id="aguila">  <div class="tile-top">    <span class="type-badge type-plugins">Plugin</span>  </div>  <h3 class="tile-name">Aguila</h3>  <p class="tile-desc">Aguila test program development, validation, and execution tools for system test PDEs. Includes OTPL language guidance, Python Sequencer API instructions, FlexED automation, offline TP verification, and ADO DevOps work item management.</p>  <div class="tile-footer">    <div class="tile-tags"><span class="tile-tag">aguila</span><span class="tile-tag">otpl</span><span class="tile-tag">flexed</span></div>    <div class="tile-footer-meta"><span class="tile-category">System Test TP</span>    </div>  </div></div><div class="tile-card" data-id="aqua-cli">  <div class="tile-top">    <span class="type-badge type-skills">Skill</span>  </div>  <h3 class="tile-name">Aqua Cli</h3>  <p class="tile-desc">Instructions for using `AquaCmdLine.exe` directly from the Windows Command Prompt or PowerShell</p>  <div class="tile-footer">    <div class="tile-tags"><span class="tile-tag">aqua</span><span class="tile-tag">cli</span><span class="tile-tag">mit</span></div>    <div class="tile-footer-meta"><span class="tile-category">Data Analysis</span>    </div>  </div></div><div class="tile-card" data-id="aqua-cli-mcp-server-amr">  <div class="tile-top">    <span class="type-badge type-mcp-servers">MCP Server</span>  </div>  <h3 class="tile-name">Aqua Cli Mcp Server Amr</h3>  <p class="tile-desc">AQUA MCP Server is a Model Context Protocol (MCP) server that wraps `AquaCmdLine.exe` and exposes it as a set of structured tools consumable by GitHub Copilot Agent mode. Engineers describe what they need in natural language and Copilot invokes the correct MCP tool — with parameter validation, server path resolution, and CLI execution handled automatically .</p>  <div class="tile-footer">    <div class="tile-tags"><span class="tile-tag">aqua</span><span class="tile-tag">cli</span><span class="tile-tag">mcp</span></div>    <div class="tile-footer-meta"><span class="tile-category">Data Analysis</span>    </div>  </div></div><div class="tile-card" data-id="aqua-cli-mcp-server-gar">  <div class="tile-top">    <span class="type-badge type-mcp-servers">MCP Server</span>  </div>  <h3 class="tile-name">Aqua Cli Mcp Server Gar</h3>  <p class="tile-desc">AQUA MCP Server is a Model Context Protocol (MCP) server that wraps `AquaCmdLine.exe` and exposes it as a set of structured tools consumable by GitHub Copilot Agent mode. Engineers describe what they need in natural language and Copilot invokes the correct MCP tool — with parameter validation, server path resolution, and CLI execution handled automatically .</p>  <div class="tile-footer">    <div class="tile-tags"><span class="tile-tag">aqua</span><span class="tile-tag">cli</span><span class="tile-tag">mcp</span></div>    <div class="tile-footer-meta"><span class="tile-category">Data Analysis</span>    </div>  </div></div><div class="tile-card" data-id="aqua-cli-mcp-server-ger">  <div class="tile-top">    <span class="type-badge type-mcp-servers">MCP Server</span>  </div>  <h3 class="tile-name">Aqua Cli Mcp Server Ger</h3>  <p class="tile-desc">AQUA MCP Server is a Model Context Protocol (MCP) server that wraps `AquaCmdLine.exe` and exposes it as a set of structured tools consumable by GitHub Copilot Agent mode. Engineers describe what they need in natural language and Copilot invokes the correct MCP tool — with parameter validation, server path resolution, and CLI execution handled automatically .</p>  <div class="tile-footer">    <div class="tile-tags"><span class="tile-tag">aqua</span><span class="tile-tag">cli</span><span class="tile-tag">mcp</span></div>    <div class="tile-footer-meta"><span class="tile-category">Data Analysis</span>    </div>  </div></div><div class="tile-card" data-id="aqua-cli-remote-mcp-amr">  <div class="tile-top">    <span class="type-badge type-mcp-servers">MCP Server</span>  </div>  <h3 class="tile-name">Aqua Cli Remote Mcp Amr</h3>  <p class="tile-desc">The AQUA MCP Server is a Model Context Protocol (MCP) server that wraps AquaCmdLine.exe and exposes it as a set of structured tools consumable by GitHub Copilot Agent mode. Engineers describe what they need in natural language and Copilot invokes the correct MCP tool with validated parameters — without needing to know the CLI syntax, UNC paths, or server aliases.
+This is for **AMR** region only.
+
+[aqua-remote-mcp.md](https://github.com/user-attachments/files/29077910/aqua-remote-mcp.md)</p>  <div class="tile-footer">    <div class="tile-tags"><span class="tile-tag">aqua</span><span class="tile-tag">cli</span><span class="tile-tag">mcp</span></div>    <div class="tile-footer-meta"><span class="tile-category">Data Analysis</span>    </div>  </div></div></div>
+
+                    <div class="show-more-wrap" id="show-more-wrap" style="">
+                        <button class="show-more-btn" id="show-more-btn">Show more</button>
+                    </div>
+
+                    <div class="no-results" id="no-results" style="display:none;">
+                        <div class="no-results-icon">🔍</div>
+                        <h3>No results found</h3>
+                        <p>Try adjusting your filters or search terms.</p>
+                    </div>
+
+                    <div id="doc-viewer" class="doc-viewer" style="display:none;">
+                        <button class="doc-back-btn" id="doc-back-btn">← Back to Catalog</button>
+                        <div class="doc-content" id="doc-content"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="detail-modal">
+        <div class="detail-overlay"></div>
+        <div class="detail-panel">
+            <button class="detail-close" aria-label="Close">×</button>
+            <div class="detail-panel-body" id="detail-panel-body">
+                <!-- Populated by JS -->
+            </div>
+            <div class="detail-panel-footer" id="detail-panel-footer">
+                <!-- Action buttons injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- VS 2026 Install Modal Container -->
+    <div id="install-modal-container"></div>
+
+    <footer class="footer reveal visible">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="https://verbose-spoon-qjjekqj.pages.github.io/#" class="footer-logo" onclick="scrollToTop(); return false;">
+                        <img src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/forge_noBG.png" alt="Forge Store" class="footer-logo-img">
+                        <span>Forge Store</span>
+                    </a>
+                    <p>Open-source community hub for AI-powered IDE extensions.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-vsix/releases">Download Extension</a></li>
+                        <li><a href="https://verbose-spoon-qjjekqj.pages.github.io/#store">Browse Forge Store</a></li>
+                        <li><a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/blob/main/docs/WHATS_NEW.md">What's New</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/blob/main/docs/EASY_USE.md">Documentation</a></li>
+                        <li><a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/blob/main/docs/EASY_CONTRIBUTE.md">Contributing Guide</a></li>
+                        <li><a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/blob/main/docs/FAQ.md">FAQ</a></li>
+                        <li><a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/blob/main/docs/README.md#developer-resources">Developer Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store">GitHub</a></li>
+                        <li><a href="https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-store/issues/new/choose">Contribute</a></li>
+                        <li><a href="https://verbose-spoon-qjjekqj.pages.github.io/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Forge Store. Licensed under <a href="https://verbose-spoon-qjjekqj.pages.github.io/LICENSE">MIT License</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/marked.min.js.download" integrity="sha384-H+hy9ULve6xfxRkWIh/YOtvDdpXgV2fmAGQkIDTxIgZwNoaoBal14Di2YTMR6MzR" crossorigin="anonymous"></script>
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/jszip.min.js.download" integrity="sha384-+mbV2IY1Zk/X1p/nWllGySJSUN8uMs+gUAN10Or95UBH0fpj6GfKgPmgC5EXieXG" crossorigin="anonymous"></script>
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/purify.min.js.download" integrity="sha384-eEu5CTj3qGvu9PdJuS+YlkNi7d2XxQROAFYOr59zgObtlcux1ae1Il3u7jvdCSWu" crossorigin="anonymous"></script>
+    <!-- Installation Modals -->
+    <div class="install-modal" id="vscode-modal" onclick="closeInstallModal(event, &#39;vscode&#39;)">
+        <div class="install-modal-content" onclick="event.stopPropagation()">
+            <div class="install-modal-header">
+                <div class="install-modal-title">
+                    <div class="install-modal-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div>
+                        <h2>VS Code Extension</h2>
+                        <div class="status">✓ Download started</div>
+                    </div>
+                </div>
+                <button class="install-modal-close" onclick="closeInstallModal(event, &#39;vscode&#39;)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="install-modal-body">
+                <h3 class="install-modal-instructions-title">Installation Instructions</h3>
+                <div class="install-step">
+                    <div class="install-step-number">1</div>
+                    <div class="install-step-content">
+                        <strong>Wait for download</strong>
+                        <p>The <code>forge-store-vscode.vsix</code> file is downloading to your Downloads folder.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">2</div>
+                    <div class="install-step-content">
+                        <strong>Open VS Code</strong>
+                        <p>Launch Visual Studio Code if it's not already running.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">3</div>
+                    <div class="install-step-content">
+                        <strong>Install the extension</strong>
+                        <ul>
+                            <li>• Press <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code> on Mac)</li>
+                            <li>• Type "Extensions: Install from VSIX"</li>
+                            <li>• Select the downloaded <code>forge-store-vscode.vsix</code> file</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">4</div>
+                    <div class="install-step-content">
+                        <strong>Reload VS Code</strong>
+                        <p>After installation completes, reload VS Code to activate the extension:</p>
+                        <ul>
+                            <li>• Press <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code> on Mac)</li>
+                            <li>• Type "Developer: Reload Window"</li>
+                            <li>• Press Enter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="install-modal" id="cursor-modal" onclick="closeInstallModal(event, &#39;cursor&#39;)">
+        <div class="install-modal-content" onclick="event.stopPropagation()">
+            <div class="install-modal-header">
+                <div class="install-modal-title">
+                    <div class="install-modal-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div>
+                        <h2>Cursor Extension</h2>
+                        <div class="status">✓ Download started</div>
+                    </div>
+                </div>
+                <button class="install-modal-close" onclick="closeInstallModal(event, &#39;cursor&#39;)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="install-modal-body">
+                <h3 class="install-modal-instructions-title">Installation Instructions</h3>
+                <div class="install-step">
+                    <div class="install-step-number">1</div>
+                    <div class="install-step-content">
+                        <strong>Wait for download</strong>
+                        <p>The <code>forge-store-vscode.vsix</code> file is downloading to your Downloads folder.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">2</div>
+                    <div class="install-step-content">
+                        <strong>Open Cursor</strong>
+                        <p>Launch Cursor if it's not already running.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">3</div>
+                    <div class="install-step-content">
+                        <strong>Install the extension</strong>
+                        <ul>
+                            <li>• Press <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code> on Mac)</li>
+                            <li>• Type "Extensions: Install from VSIX"</li>
+                            <li>• Select the downloaded <code>forge-store-vscode.vsix</code> file</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">4</div>
+                    <div class="install-step-content">
+                        <strong>Reload Cursor</strong>
+                        <p>After installation completes, reload Cursor to activate the extension:</p>
+                        <ul>
+                            <li>• Press <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code> on Mac)</li>
+                            <li>• Type "Developer: Reload Window"</li>
+                            <li>• Press Enter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="install-modal" id="vs2026-modal" onclick="closeInstallModal(event, &#39;vs2026&#39;)">
+        <div class="install-modal-content" onclick="event.stopPropagation()">
+            <div class="install-modal-header">
+                <div class="install-modal-title">
+                    <div class="install-modal-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div>
+                        <h2>Visual Studio 2026</h2>
+                        <div class="status">✓ Download started</div>
+                    </div>
+                </div>
+                <button class="install-modal-close" onclick="closeInstallModal(event, &#39;vs2026&#39;)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="install-modal-body">
+                <h3 class="install-modal-instructions-title">Installation Instructions</h3>
+                <div class="install-step">
+                    <div class="install-step-number">1</div>
+                    <div class="install-step-content">
+                        <strong>Wait for download</strong>
+                        <p>The <code>forge-store-vs26.vsix</code> file is downloading to your Downloads folder.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">2</div>
+                    <div class="install-step-content">
+                        <strong>Double-click the downloaded file</strong>
+                        <p>Windows will automatically open the VSIX installer for Visual Studio 2026.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">3</div>
+                    <div class="install-step-content">
+                        <strong>Follow the installer</strong>
+                        <p>Click "Install" in the VSIX Installer dialog that appears.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">4</div>
+                    <div class="install-step-content">
+                        <strong>Restart Visual Studio</strong>
+                        <p>After installation completes, restart Visual Studio 2026 to activate the extension.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+function openInstallModal(type) {
+    const modal = document.getElementById(type + '-modal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Auto-download the VSIX file
+    const isVsCodeBased = type === 'vscode' || type === 'cursor';
+    const downloadUrl = isVsCodeBased
+        ? 'https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-vsix/releases/latest/download/forge-store-vscode.vsix'
+        : 'https://github.com/intel-innersource/applications.manufacturing.intel.ai.forge-vsix/releases/latest/download/forge-store-vs26.vsix';
+    
+    const a = document.createElement('a');
+    a.href = downloadUrl;
+    a.download = isVsCodeBased ? 'forge-store-vscode.vsix' : 'forge-store-vs26.vsix';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
+function closeInstallModal(event, type) {
+    if (event) event.stopPropagation();
+    const modal = document.getElementById(type + '-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.install-modal').forEach(modal => {
+            modal.classList.remove('active');
+        });
+        document.body.style.overflow = '';
+    }
+});
+    </script>
+
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/theme-switcher.js.download"></script>
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/category-metadata.js.download"></script>
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/catalog-loader.js.download"></script>
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/search.js.download"></script>
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/hero-particles.js.download"></script>
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/menu.js.download"></script>
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/mega-panels.js.download"></script>
+    <script src="./Forge Store — Skills, Prompts, Instructions, Agents &amp; Plugins_files/animations.js.download"></script>
+
+
+</body></html>

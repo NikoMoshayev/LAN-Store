@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN Store — Skills, MCPs, Tools, Extensions &amp; Agents</title>
+    <meta name="description" content="Intel LAN team hub for skills, MCP servers, tools, extensions, and agents.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        (function(){try{var t=localStorage.getItem('lan-store-theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark-theme':'light-theme'}document.documentElement.classList.add(t)}catch(e){}})();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ============================================================
+         Header
+         ============================================================ -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="header-left">
+                <a href="#" class="logo" onclick="resetFilters(); scrollToTop(); return false;">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">LAN Store</span>
+                </a>
+                <nav class="nav">
+                    <a href="#store" class="nav-link">Store</a>
+                    <a href="#features" class="nav-link">What's Inside</a>
+                    <a href="https://github.com/intel-innersource/networking.gbe-sv.forge-store" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                        <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============================================================
+             Hero
+             ============================================================ -->
+        <section class="hero-landing" id="hero">
+            <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+            <div class="hero-bg-grid" aria-hidden="true"></div>
+            <div class="container hero-landing-inner">
+                <p class="hero-eyebrow">Intel &middot; LAN Engineering &middot; Internal</p>
+                <h1 class="hero-headline">
+                    <span>Supercharge your</span><br>
+                    <span class="hero-gradient-text">LAN debug workflow</span><span class="typing-cursor" id="typing-cursor">|</span>
+                </h1>
+                <p class="hero-tagline">
+                    Skills, MCP servers, VS Code extensions, agents &amp; tools — built by the LAN team, for the LAN team.
+                </p>
+                <div class="hero-cta-row hero-fade-in visible">
+                    <button onclick="openInstallModal()" class="btn-hero-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Download NVM Builder VSIX
+                    </button>
+                    <a href="#store" class="btn-hero-outline">Browse Store</a>
+                </div>
+            </div>
+            <!-- Floating keyword scroller -->
+            <div class="hero-keyword-track" aria-hidden="true">
+                <div class="hero-keyword-scroll">
+                    <span>NVM</span><span>scandump</span><span>eSPI</span><span>PCIe</span><span>MDIO</span><span>PHY</span><span>driver</span><span>RTL</span><span>CSME</span><span>copilot</span><span>debug</span><span>silicon</span><span>NVM</span><span>scandump</span><span>eSPI</span><span>PCIe</span><span>MDIO</span><span>PHY</span><span>driver</span><span>RTL</span><span>CSME</span><span>copilot</span><span>debug</span><span>silicon</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             Features
+             ============================================================ -->
+        <section class="features-section reveal" id="features">
+            <div class="container features-inner">
+                <h2 class="features-headline">
+                    <span>What's inside the</span><br>
+                    <span class="hero-gradient-text">LAN Store</span>
+                </h2>
+                <p class="features-tagline">
+                    Six artifact types, ready to drop into your workflow.
+                </p>
+                <div class="forge-explorer-grid reveal-stagger">
+                    <!-- VSIX Extension -->
+                    <div class="forge-feature-card" style="--c:#f97316">
+                        <div class="fc-head">
+                            <span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 2h-1a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v3.5H3.5a2 2 0 0 0 0 4H5V18a2 2 0 0 0 2 2h3.5v1.5a2 2 0 0 0 4 0V20H18a2 2 0 0 0 2-2v-3.5h1.5a2 2 0 0 0 0-4H20V7a2 2 0 0 0-2-2h-2.5V4a2 2 0 0 0-2-2z"/></svg></span>
+                            <h4 class="fc-title">VS Code Extension</h4>
+                        </div>
+                        <p class="fc-desc">Installable VSIX packages that add commands, wizards, and automation to VS Code.</p>
+                    </div>
+                    <!-- Skill -->
+                    <div class="forge-feature-card" style="--c:#8b5cf6">
+                        <div class="fc-head">
+                            <span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+                            <h4 class="fc-title">Skill</h4>
+                        </div>
+                        <p class="fc-desc">A reusable SKILL.md that Copilot loads on demand — log parsing, NVM building, scandump analysis.</p>
+                    </div>
+                    <!-- MCP Server -->
+                    <div class="forge-feature-card" style="--c:#10b981">
+                        <div class="fc-head">
+                            <span class="fc-icon"><svg viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"><path d="M18 84.8528L85.8822 16.9706C95.2548 7.59798 110.451 7.59798 119.823 16.9706C129.196 26.3431 129.196 41.5391 119.823 50.9117L68.5581 102.177"/><path d="M69.2652 101.47L119.823 50.9117C129.196 41.5391 144.392 41.5391 153.765 50.9117L154.118 51.2652C163.491 60.6378 163.491 75.8338 154.118 85.2063L92.7248 146.6C89.6006 149.724 89.6006 154.789 92.7248 157.913L105.331 170.52"/><path d="M102.853 33.9411L52.6482 84.1457C43.2756 93.5183 43.2756 108.714 52.6482 118.087C62.0208 127.459 77.2167 127.459 86.5893 118.087L136.794 67.8822"/></svg></span>
+                            <h4 class="fc-title">MCP Server</h4>
+                        </div>
+                        <p class="fc-desc">Model Context Protocol servers — expose tools like HSD queries, PythonSV registers, and SharePoint docs.</p>
+                    </div>
+                    <!-- Agent -->
+                    <div class="forge-feature-card" style="--c:#3b82f6">
+                        <div class="fc-head">
+                            <span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="10" rx="2"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><circle cx="9.5" cy="13.5" r="1"/><circle cx="14.5" cy="13.5" r="1"/></svg></span>
+                            <h4 class="fc-title">Agent</h4>
+                        </div>
+                        <p class="fc-desc">Custom .agent.md personas — debugger, RTL designer, tester — each with specialized knowledge.</p>
+                    </div>
+                    <!-- Tool -->
+                    <div class="forge-feature-card" style="--c:#06b6d4">
+                        <div class="fc-head">
+                            <span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+                            <h4 class="fc-title">Tool / Script</h4>
+                        </div>
+                        <p class="fc-desc">Standalone Python scripts — HSD toolkit, eSPI analyzer, memory dump decoder, NVM comparator.</p>
+                    </div>
+                    <!-- Prompt -->
+                    <div class="forge-feature-card" style="--c:#eab308">
+                        <div class="fc-head">
+                            <span class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="13" y2="12"/></svg></span>
+                            <h4 class="fc-title">Prompt</h4>
+                        </div>
+                        <p class="fc-desc">Reusable .prompt.md templates — debug triage, bug reports, performance analysis, test plans.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             Store / Marketplace
+             ============================================================ -->
+        <section class="marketplace reveal" id="store">
+            <div class="container">
+                <div class="store-header">
+                    <h2>Browse the LAN Store</h2>
+                    <p>Discover team-built artifacts — install directly from your IDE.</p>
+                </div>
+            </div>
+
+            <div class="container marketplace-layout">
+                <!-- Toolbar -->
+                <div class="store-toolbar">
+                    <div class="store-search-inline">
+                        <svg class="search-inline-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <input type="text" id="search-input" placeholder="Search artifacts..." autocomplete="off">
+                    </div>
+                    <div class="filter-group" id="type-nav">
+                        <button class="filter-pill type-btn active" data-type="All">All</button>
+                        <button class="filter-pill type-btn" data-type="extension"><span class="type-dot" style="background:#f97316"></span>Extensions</button>
+                        <button class="filter-pill type-btn" data-type="skill"><span class="type-dot" style="background:#8b5cf6"></span>Skills</button>
+                        <button class="filter-pill type-btn" data-type="mcp-server"><span class="type-dot" style="background:#10b981"></span>MCP Servers</button>
+                        <button class="filter-pill type-btn" data-type="agent"><span class="type-dot" style="background:#3b82f6"></span>Agents</button>
+                        <button class="filter-pill type-btn" data-type="tool"><span class="type-dot" style="background:#06b6d4"></span>Tools</button>
+                        <button class="filter-pill type-btn" data-type="prompt"><span class="type-dot" style="background:#eab308"></span>Prompts</button>
+                    </div>
+                </div>
+
+                <!-- Grid -->
+                <div class="content">
+                    <div class="content-header">
+                        <h2 id="content-title">All Resources</h2>
+                        <span class="content-count" id="content-count"></span>
+                    </div>
+                    <div class="tile-grid" id="tile-grid"></div>
+                    <div class="no-results" id="no-results" style="display:none;">
+                        <div class="no-results-icon">🔍</div>
+                        <h3>No results found</h3>
+                        <p>Try adjusting your filters or search terms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         Detail Modal
+         ============================================================ -->
+    <div id="detail-modal" class="detail-modal">
+        <div class="detail-overlay" onclick="closeDetailModal()"></div>
+        <div class="detail-panel">
+            <button class="detail-close" onclick="closeDetailModal()" aria-label="Close">&times;</button>
+            <div class="detail-panel-body" id="detail-panel-body"></div>
+            <div class="detail-panel-footer" id="detail-panel-footer"></div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         Install Modal (VSIX)
+         ============================================================ -->
+    <div class="install-modal" id="install-modal" onclick="closeInstallModal(event)">
+        <div class="install-modal-content" onclick="event.stopPropagation()">
+            <div class="install-modal-header">
+                <div class="install-modal-title">
+                    <div class="install-modal-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </div>
+                    <div>
+                        <h2>GBE NVM Builder Extension</h2>
+                        <div class="status">✓ Download started</div>
+                    </div>
+                </div>
+                <button class="install-modal-close" onclick="closeInstallModal(event)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="install-modal-body">
+                <h3 class="install-modal-instructions-title">Installation Instructions</h3>
+                <div class="install-step">
+                    <div class="install-step-number">1</div>
+                    <div class="install-step-content">
+                        <strong>Wait for download</strong>
+                        <p>The <code>gbe-nvm-builder-0.2.0.vsix</code> file is downloading to your Downloads folder.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">2</div>
+                    <div class="install-step-content">
+                        <strong>Open VS Code</strong>
+                        <p>Launch Visual Studio Code if it's not already running.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">3</div>
+                    <div class="install-step-content">
+                        <strong>Install the extension</strong>
+                        <ul>
+                            <li>Press <code>Ctrl+Shift+P</code></li>
+                            <li>Type <strong>"Extensions: Install from VSIX"</strong></li>
+                            <li>Select the downloaded <code>gbe-nvm-builder-0.2.0.vsix</code> file</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="install-step-number">4</div>
+                    <div class="install-step-content">
+                        <strong>Reload VS Code</strong>
+                        <p>After installation completes, reload VS Code:</p>
+                        <ul>
+                            <li>Press <code>Ctrl+Shift+P</code></li>
+                            <li>Type <strong>"Developer: Reload Window"</strong></li>
+                            <li>Press Enter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         Footer
+         ============================================================ -->
+    <footer class="footer reveal">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <span class="footer-logo">⚡ LAN Store</span>
+                    <p>Internal tool hub for the Intel LAN team.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#store">Browse Store</a></li>
+                        <li><a href="downloads/gbe-nvm-builder-0.2.0.vsix">Download NVM Builder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/intel-innersource/networking.gbe-sv.forge-store" target="_blank">GitHub</a></li>
+                        <li><a href="https://github.com/intel-innersource/networking.gbe-sv.forge-store/issues/new/choose" target="_blank">Contribute</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Team</h4>
+                    <ul>
+                        <li><a href="https://engage.cloud.microsoft/main/org/intel.com" target="_blank">Viva Engage</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LAN Team, Intel Corporation. Internal use only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>
