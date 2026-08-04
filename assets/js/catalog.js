@@ -23,6 +23,24 @@ var CATALOG = [
             "GBE NVM: Build NVM Image"
         ]
     },
+    {
+        id: "hsd-toolkit",
+        title: "HSD Toolkit",
+        type: "extension",
+        description: "Query, fetch, search, and comment on HSdes sightings directly from VS Code. Full dump: article + comments + attachments + links. Windows Kerberos/SSPI auth — no tokens needed.",
+        tags: ["hsd", "hsdes", "sighting", "debug", "kerberos", "vsix"],
+        status: "ready",
+        version: "0.1.0",
+        author: "intel-gbe-sv",
+        downloadUrl: "downloads/hsd-toolkit-0.1.0.vsix",
+        commands: [
+            "HSD Toolkit: Set Up Environment (venv + deps)",
+            "HSD Toolkit: Install Skill into Workspace",
+            "HSD Toolkit: Fetch HSD (Full Dump)",
+            "HSD Toolkit: Search HSdes",
+            "HSD Toolkit: Query HSD"
+        ]
+    },
 
     // ═══════════════════════════════════════════════════════════════
     // SKILLS — Placeholders
