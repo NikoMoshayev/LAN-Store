@@ -178,16 +178,6 @@ var CATALOG = [
     // TOOLS — Placeholders
     // ═══════════════════════════════════════════════════════════════
     {
-        id: "hsd-toolkit",
-        title: "HSD Toolkit",
-        type: "tool",
-        description: "Full HSD automation — fetch articles + comments + attachments, query/search tickets, post comments, generate HTML reports. Windows Kerberos auth.",
-        tags: ["hsd", "hsdes", "bugs", "toolkit"],
-        status: "coming-soon",
-        version: "—",
-        author: "intel-gbe-sv"
-    },
-    {
         id: "espi-analyzer",
         title: "eSPI Transaction Analyzer",
         type: "tool",
