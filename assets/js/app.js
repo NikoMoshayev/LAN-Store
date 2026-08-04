@@ -94,7 +94,9 @@
             '</dl>';
 
         if (item.downloadUrl) {
-            footer.innerHTML = '<a href="' + item.downloadUrl + '" download class="btn-download" onclick="setTimeout(function(){openInstallModal()},300)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download VSIX</a>';
+            var dlUrl = item.downloadUrl;
+            var dlName = dlUrl.split('/').pop();
+            footer.innerHTML = '<a href="' + dlUrl + '" download class="btn-download" onclick="setTimeout(function(){openInstallModal(\'' + dlName + '\')},300)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download VSIX</a>';
         } else {
             footer.innerHTML = '<span class="btn-download disabled">Coming Soon</span>';
         }
@@ -115,16 +117,21 @@
     });
 
     // ── Install Modal ────────────────────────────────────────────
-    window.openInstallModal = function () {
+    window.openInstallModal = function (fileName) {
         var modal = document.getElementById('install-modal');
+        // Update the modal text to reflect the actual file being downloaded
+        var nameEl = modal.querySelector('.install-modal-body code');
+        if (nameEl && fileName) {
+            nameEl.textContent = fileName;
+        }
+        var allCodes = modal.querySelectorAll('.install-modal-body code');
+        if (fileName) {
+            allCodes.forEach(function(el) {
+                if (el.textContent.match(/\.vsix$/)) el.textContent = fileName;
+            });
+        }
         modal.classList.add('open');
-        // Trigger download
-        var link = document.createElement('a');
-        link.href = 'downloads/gbe-nvm-builder-0.1.0.vsix';
-        link.download = 'gbe-nvm-builder-0.1.0.vsix';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // No duplicate download — the <a> tag already triggers it
     };
 
     window.closeInstallModal = function (e) {
