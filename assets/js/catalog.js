@@ -45,18 +45,18 @@ var CATALOG = [
         id: "swfw-tracker",
         title: "LAN SW-FW Deliveries Tracker",
         type: "extension",
-        description: "Fetch and query the team's master deliverables tracker (driver versions, NVM images, FW releases, WHQL) from SharePoint. MSAL device-code auth — cached after first login. Includes Copilot skill for version lookups during debug.",
+        description: "Query the team's master deliverables tracker (driver versions, NVM images, FW releases, WHQL) live from SharePoint — always fresh, no download. Includes Copilot skill for version lookups during debug.",
         tags: ["driver", "firmware", "nvm", "tracker", "sharepoint", "vsix"],
         status: "ready",
-        version: "0.1.0",
+        version: "0.2.0",
         author: "intel-gbe-sv",
-        downloadUrl: "downloads/swfw-tracker-0.1.0.vsix",
+        downloadUrl: "downloads/swfw-tracker-0.2.0.vsix",
         commands: [
             "SW-FW Tracker: Set Up Environment (venv + deps)",
             "SW-FW Tracker: Install Skill into Workspace",
-            "SW-FW Tracker: Download Latest Tracker",
             "SW-FW Tracker: Query Driver Version",
-            "SW-FW Tracker: Query NVM Version"
+            "SW-FW Tracker: Query NVM Version",
+            "SW-FW Tracker: List Available Sheets"
         ]
     },
 
