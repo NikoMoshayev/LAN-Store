@@ -1,0 +1,36 @@
+{
+	"folders": [
+		{
+			"name": "NetAdapter Driver (WDF/KMDF)",
+			"uri": "vscode-vfs://github/intel-innersource/drivers.ethernet.windows.netadapter"
+		},
+		{
+			"name": "Nahum NDIS Driver (E1D)",
+			"uri": "vscode-vfs://github/intel-innersource/drivers.ethernet.windows.ndis-ccv1"
+		},
+		{
+			"name": "Foxville NDIS Driver (E2F)",
+			"uri": "vscode-vfs://github/intel-innersource/drivers.ethernet.windows.ndis-ccv2"
+		},
+		{
+			"name": "Foxville Management FW",
+			"uri": "vscode-vfs://github/intel-innersource/firmware.ethernet.client.foxville-mng"
+		},
+		{
+			"name": "Foxville GPHY FW (MaxLinear)",
+			"uri": "vscode-vfs://github/intel-innersource/firmware.ethernet.client.foxville-gphy"
+		},
+		{
+			"name": "NVM AI Assistant / Image Creator",
+			"uri": "vscode-vfs://github/michaele1991/LAN_Tool_Dev"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.vs": true,
+			"**/bin": true,
+			"**/obj": true
+		}
+	}
+}

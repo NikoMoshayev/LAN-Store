@@ -86,6 +86,15 @@
             '<h2>' + item.title + '</h2>' +
             '<p class="detail-desc">' + item.description + '</p>' +
             (item.commands ? '<div class="detail-meta"><dt>Commands</dt><dd>' + item.commands.map(function (c) { return '<code>' + c + '</code>'; }).join('<br>') + '</dd></div>' : '') +
+            (item.repos ? '<div class="repo-list">' + item.repos.map(function (r) {
+                var link = r.url ? '<a href="' + r.url + '" target="_blank" rel="noopener">' + r.name + '</a>' : '<span>' + r.name + '</span>';
+                var clone = r.url ? '<code class="repo-clone">git clone ' + r.url + '.git</code>' : '';
+                return '<div class="repo-item">' +
+                    '<div class="repo-item-header">' + link + '</div>' +
+                    '<div class="repo-item-desc">' + r.desc + '</div>' +
+                    clone +
+                    '</div>';
+            }).join('') + '</div>' : '') +
             '<dl class="detail-meta">' +
             '<dt>Version</dt><dd>' + item.version + '</dd>' +
             '<dt>Author</dt><dd>' + item.author + '</dd>' +
@@ -97,9 +106,10 @@
             var dlUrl = item.downloadUrl;
             var dlName = dlUrl.split('/').pop();
             footer.innerHTML = '<a href="' + dlUrl + '" download class="btn-download" onclick="setTimeout(function(){openInstallModal(\'' + dlName + '\')},300)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download VSIX</a>';
+        } else if (item.repos && item.workspaceFile) {
+            footer.innerHTML = '<a href="' + item.workspaceFile + '" download class="btn-download"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Workspace File</a>';
         } else if (item.repoUrl) {
-            footer.innerHTML = '<a href="' + item.repoUrl + '" target="_blank" rel="noopener" class="btn-download"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Open Repository</a>';
-            footer.innerHTML = '<span class="btn-download disabled">Coming Soon</span>';
+            footer.innerHTML = '<a href="' + item.repoUrl + '" target="_blank" rel="noopener" class="btn-download"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Open Resource</a>';
         }
 
         modal.classList.add('open');

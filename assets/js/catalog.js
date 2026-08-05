@@ -223,83 +223,27 @@ var CATALOG = [
     },
 
     // ═══════════════════════════════════════════════════════════════
-    // REPOS — Driver, Firmware, RTL repositories
+    // REPOS — Consolidated repository hub + resources
     // ═══════════════════════════════════════════════════════════════
     {
-        id: "netadapter-driver",
-        title: "NetAdapter Driver (WDF/KMDF)",
+        id: "gbe-repos",
+        title: "GbE Code Repositories",
         type: "repo",
-        description: "Unified Windows NetAdapter driver for Nahum (I219/Jacksonville) and Foxville (I225/I226). Modern WDF/KMDF framework. Key classes: ProductE1dn* (Nahum), ProductE2fn* (Foxville).",
-        tags: ["driver", "netadapter", "nahum", "foxville", "windows", "wdf"],
+        description: "All GbE driver, firmware, and tool repositories in one place. Clone individually or download the VS Code workspace file to open them all at once.",
+        tags: ["driver", "firmware", "rtl", "netadapter", "ndis", "foxville", "nahum", "csme"],
         status: "ready",
         version: "—",
-        author: "LAN SW",
-        repoUrl: "https://github.com/intel-innersource/drivers.ethernet.windows.netadapter"
-    },
-    {
-        id: "nahum-ndis-driver",
-        title: "Nahum NDIS Driver (E1D)",
-        type: "repo",
-        description: "Legacy NDIS 6.x miniport driver for I219 (Nahum/Jacksonville). Used on older Windows releases before NetAdapter migration.",
-        tags: ["driver", "ndis", "nahum", "i219", "e1d", "windows"],
-        status: "ready",
-        version: "—",
-        author: "LAN SW",
-        repoUrl: "https://github.com/intel-innersource/drivers.ethernet.windows.ndis-ccv1"
-    },
-    {
-        id: "foxville-ndis-driver",
-        title: "Foxville NDIS Driver (E2F)",
-        type: "repo",
-        description: "Legacy NDIS 6.x miniport driver for I225/I226 (Foxville). Used on older Windows releases before NetAdapter migration.",
-        tags: ["driver", "ndis", "foxville", "i225", "i226", "e2f", "windows"],
-        status: "ready",
-        version: "—",
-        author: "LAN SW",
-        repoUrl: "https://github.com/intel-innersource/drivers.ethernet.windows.ndis-ccv2"
-    },
-    {
-        id: "foxville-mng-fw",
-        title: "Foxville Management FW",
-        type: "repo",
-        description: "Foxville (I225/I226) device firmware — PHY FW, link management, embedded controller operations.",
-        tags: ["firmware", "foxville", "i225", "i226", "management"],
-        status: "ready",
-        version: "—",
-        author: "LAN FW",
-        repoUrl: "https://github.com/intel-innersource/firmware.ethernet.client.foxville-mng"
-    },
-    {
-        id: "foxville-gphy-fw",
-        title: "Foxville GPHY FW (MaxLinear)",
-        type: "repo",
-        description: "MaxLinear GPHY firmware for Foxville (I225/I226) — vendor code running on the integrated GPHY.",
-        tags: ["firmware", "foxville", "gphy", "maxlinear", "phy"],
-        status: "ready",
-        version: "—",
-        author: "LAN FW",
-        repoUrl: "https://github.com/intel-innersource/firmware.ethernet.client.foxville-gphy"
-    },
-    {
-        id: "csme-lan-fw",
-        title: "CSME LAN Firmware",
-        type: "repo",
-        description: "CSME (Converged Security and Management Engine) LAN firmware — manageability, corporate WoL, AMT, proxy offload, ME-side LAN operations. Source: Lan_FW_CSME.c (587 KB).",
-        tags: ["firmware", "csme", "amt", "manageability", "wol"],
-        status: "ready",
-        version: "—",
-        author: "LAN FW"
-    },
-    {
-        id: "nvm-tool-dev",
-        title: "NVM AI Assistant / Image Creator",
-        type: "repo",
-        description: "GBE NVM image builder tools — Python-based NVM assembly from XLSM platform maps, with AI-assisted workflow. Contains both NVM_AI_Assistant and GBE_Image_Creator.",
-        tags: ["nvm", "tools", "python", "image", "builder"],
-        status: "ready",
-        version: "—",
-        author: "LAN SW",
-        repoUrl: "https://github.com/michaele1991/LAN_Tool_Dev"
+        author: "LAN SW/FW",
+        repos: [
+            { name: "NetAdapter Driver (WDF/KMDF)", desc: "Unified Windows driver — Nahum (I219) & Foxville (I225/I226)", url: "https://github.com/intel-innersource/drivers.ethernet.windows.netadapter" },
+            { name: "Nahum NDIS Driver (E1D)", desc: "Legacy NDIS 6.x miniport — I219 (Nahum/Jacksonville)", url: "https://github.com/intel-innersource/drivers.ethernet.windows.ndis-ccv1" },
+            { name: "Foxville NDIS Driver (E2F)", desc: "Legacy NDIS 6.x miniport — I225/I226 (Foxville)", url: "https://github.com/intel-innersource/drivers.ethernet.windows.ndis-ccv2" },
+            { name: "Foxville Management FW", desc: "Foxville device firmware — PHY FW, link management", url: "https://github.com/intel-innersource/firmware.ethernet.client.foxville-mng" },
+            { name: "Foxville GPHY FW (MaxLinear)", desc: "MaxLinear GPHY firmware for Foxville (I225/I226)", url: "https://github.com/intel-innersource/firmware.ethernet.client.foxville-gphy" },
+            { name: "CSME LAN Firmware", desc: "CSME LAN FW — manageability, AMT, corporate WoL, proxy offload" },
+            { name: "NVM AI Assistant / Image Creator", desc: "Python-based NVM image builder + AI-assisted workflow", url: "https://github.com/michaele1991/LAN_Tool_Dev" }
+        ],
+        workspaceFile: "downloads/gbe-repos.code-workspace"
     },
     {
         id: "sw-fw-tracker",
