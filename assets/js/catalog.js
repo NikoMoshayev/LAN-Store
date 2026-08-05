@@ -300,5 +300,16 @@ var CATALOG = [
         version: "—",
         author: "LAN SW",
         repoUrl: "https://github.com/michaele1991/LAN_Tool_Dev"
+    },
+    {
+        id: "sw-fw-tracker",
+        title: "LAN SW-FW Deliveries Tracker",
+        type: "repo",
+        description: "Master tracker for driver versions, NVM images, FW releases, and changelogs. Sheets: Foxville NVM tracking, Foxville drivers (E2F), Jacksonville drivers (E1D), GBE NVM changes per platform (TGL/ADP/MTL/LNL/PTL), WHQL certification matrix.",
+        tags: ["driver", "firmware", "nvm", "tracker", "versions", "whql", "sharepoint"],
+        status: "ready",
+        version: "—",
+        author: "LAN SW/FW",
+        repoUrl: "https://intel.sharepoint.com/:x:/r/sites/CIGOrgCCDSWFW/_layouts/15/doc2.aspx?sourcedoc=%7B22A92FBB-C407-4B64-B2D3-073F0E2BD1E3%7D&file=LAN%20SW-FW%20Deliveries%20Trackers.xlsx&action=default"
     }
 ];
