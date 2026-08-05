@@ -41,6 +41,24 @@ var CATALOG = [
             "HSD Toolkit: Query HSD"
         ]
     },
+    {
+        id: "swfw-tracker",
+        title: "LAN SW-FW Deliveries Tracker",
+        type: "extension",
+        description: "Fetch and query the team's master deliverables tracker (driver versions, NVM images, FW releases, WHQL) from SharePoint. MSAL device-code auth — cached after first login. Includes Copilot skill for version lookups during debug.",
+        tags: ["driver", "firmware", "nvm", "tracker", "sharepoint", "vsix"],
+        status: "ready",
+        version: "0.1.0",
+        author: "intel-gbe-sv",
+        downloadUrl: "downloads/swfw-tracker-0.1.0.vsix",
+        commands: [
+            "SW-FW Tracker: Set Up Environment (venv + deps)",
+            "SW-FW Tracker: Install Skill into Workspace",
+            "SW-FW Tracker: Download Latest Tracker",
+            "SW-FW Tracker: Query Driver Version",
+            "SW-FW Tracker: Query NVM Version"
+        ]
+    },
 
     // ═══════════════════════════════════════════════════════════════
     // SKILLS — Placeholders
@@ -235,16 +253,5 @@ var CATALOG = [
         version: "—",
         author: "LAN SW/FW",
         downloadUrl: "downloads/gbe-repos.code-workspace"
-    },
-    {
-        id: "sw-fw-tracker",
-        title: "LAN SW-FW Deliveries Tracker",
-        type: "repo",
-        description: "Master tracker for driver versions, NVM images, FW releases, and changelogs. Sheets: Foxville NVM tracking, Foxville drivers (E2F), Jacksonville drivers (E1D), GBE NVM changes per platform (TGL/ADP/MTL/LNL/PTL), WHQL certification matrix.",
-        tags: ["driver", "firmware", "nvm", "tracker", "versions", "whql", "sharepoint"],
-        status: "ready",
-        version: "—",
-        author: "LAN SW/FW",
-        repoUrl: "https://intel.sharepoint.com/:x:/r/sites/CIGOrgCCDSWFW/_layouts/15/doc2.aspx?sourcedoc=%7B22A92FBB-C407-4B64-B2D3-073F0E2BD1E3%7D&file=LAN%20SW-FW%20Deliveries%20Trackers.xlsx&action=default"
     }
 ];
