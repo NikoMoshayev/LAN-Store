@@ -229,21 +229,12 @@ var CATALOG = [
         id: "gbe-repos",
         title: "GbE Code Repositories",
         type: "repo",
-        description: "All GbE driver, firmware, and tool repositories in one place. Clone individually or download the VS Code workspace file to open them all at once.",
-        tags: ["driver", "firmware", "rtl", "netadapter", "ndis", "foxville", "nahum", "csme"],
+        description: "VS Code workspace file with all GbE driver, firmware, and tool repos. Download, open in VS Code → all repos in one workspace.",
+        tags: ["driver", "firmware", "netadapter", "ndis", "foxville", "nahum", "csme", "workspace"],
         status: "ready",
         version: "—",
         author: "LAN SW/FW",
-        repos: [
-            { name: "NetAdapter Driver (WDF/KMDF)", desc: "Unified Windows driver — Nahum (I219) & Foxville (I225/I226)", url: "https://github.com/intel-innersource/drivers.ethernet.windows.netadapter" },
-            { name: "Nahum NDIS Driver (E1D)", desc: "Legacy NDIS 6.x miniport — I219 (Nahum/Jacksonville)", url: "https://github.com/intel-innersource/drivers.ethernet.windows.ndis-ccv1" },
-            { name: "Foxville NDIS Driver (E2F)", desc: "Legacy NDIS 6.x miniport — I225/I226 (Foxville)", url: "https://github.com/intel-innersource/drivers.ethernet.windows.ndis-ccv2" },
-            { name: "Foxville Management FW", desc: "Foxville device firmware — PHY FW, link management", url: "https://github.com/intel-innersource/firmware.ethernet.client.foxville-mng" },
-            { name: "Foxville GPHY FW (MaxLinear)", desc: "MaxLinear GPHY firmware for Foxville (I225/I226)", url: "https://github.com/intel-innersource/firmware.ethernet.client.foxville-gphy" },
-            { name: "CSME LAN Firmware", desc: "CSME LAN FW — manageability, AMT, corporate WoL, proxy offload" },
-            { name: "NVM AI Assistant / Image Creator", desc: "Python-based NVM image builder + AI-assisted workflow", url: "https://github.com/michaele1991/LAN_Tool_Dev" }
-        ],
-        workspaceFile: "downloads/gbe-repos.code-workspace"
+        downloadUrl: "downloads/gbe-repos.code-workspace"
     },
     {
         id: "sw-fw-tracker",
