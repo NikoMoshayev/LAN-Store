@@ -198,6 +198,7 @@ code { background: var(--bg-surface); border: 1px solid var(--border); border-ra
 .type-agent { background: color-mix(in srgb, #3b82f6 15%, transparent); color: #3b82f6; }
 .type-tool { background: color-mix(in srgb, #06b6d4 15%, transparent); color: #06b6d4; }
 .type-prompt { background: color-mix(in srgb, #eab308 15%, transparent); color: #eab308; }
+.type-repo { background: color-mix(in srgb, #ec4899 15%, transparent); color: #ec4899; }
 .tile-name { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
 .tile-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; flex: 1; margin-bottom: 12px; }
 .tile-footer { display: flex; justify-content: space-between; align-items: center; }
