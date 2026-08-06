@@ -193,8 +193,19 @@ var CATALOG = [
     },
 
     // ═══════════════════════════════════════════════════════════════
-    // TOOLS — Placeholders
+    // TOOLS
     // ═══════════════════════════════════════════════════════════════
+    {
+        id: "smbus-parser",
+        title: "SMBus / MDIO Trace Parser",
+        type: "tool",
+        description: "Standalone GUI app — decode SMBus (I2C/MDIO) traces from Total Phase or Saleae captures. Parses MAC↔PHY transactions, tracks MDIO page state, names Jacksonville PHY registers, detects link events and anomalies. No external deps — just Python 3.8+.",
+        tags: ["smbus", "mdio", "phy", "jacksonville", "saleae", "i2c", "trace"],
+        status: "ready",
+        version: "2.1",
+        author: "intel-gbe-sv",
+        downloadUrl: "downloads/smbus-parser-2.1.zip"
+    },
     {
         id: "espi-analyzer",
         title: "eSPI Transaction Analyzer",
