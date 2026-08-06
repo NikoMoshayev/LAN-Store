@@ -94,16 +94,6 @@ var CATALOG = [
         author: "intel-gbe-sv"
     },
     {
-        id: "smbus-decoder",
-        title: "SMBus / MDIO Decoder",
-        type: "skill",
-        description: "Decode SMBus (I2C/MDIO) traces from Total Phase or Saleae logic analyzers. Parses MAC↔PHY transactions, tracks MDIO page state, names Jacksonville PHY registers.",
-        tags: ["smbus", "mdio", "phy", "saleae", "i2c"],
-        status: "coming-soon",
-        version: "—",
-        author: "intel-gbe-sv"
-    },
-    {
         id: "fetch-platform-spec",
         title: "Fetch Platform Spec",
         type: "skill",
