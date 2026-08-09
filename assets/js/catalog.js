@@ -59,7 +59,24 @@ var CATALOG = [
             "SW-FW Tracker: List Available Sheets"
         ]
     },
-
+    {
+        id: "nvm-comparator-ext",
+        title: "GbE NVM Comparator",
+        type: "extension",
+        description: "Compare a candidate GbE NVM image against the last official release \u2014 bit-exact, with every changed bit named. Splits functional config bits from bookkeeping (version / EETRACK / checksum), validates the 0xBABA checksum, matches release zips SKU-for-SKU, and flags Cons-vs-Corp asymmetry. Bundles the skill, a desktop GUI, and an HTML report. No pip install.",
+        tags: ["nvm", "diff", "nahum", "i219", "checksum", "review", "vsix"],
+        status: "ready",
+        version: "1.0.0",
+        author: "intel-gbe-sv",
+        downloadUrl: "downloads/nvm-comparator-1.0.0.vsix",
+        commands: [
+            "NVM Comparator: Compare Two Images (HTML Report)",
+            "NVM Comparator: Open Comparator (GUI)",
+            "NVM Comparator: Check Image (Checksum + Version)",
+            "NVM Comparator: Install Skill into Workspace",
+            "NVM Comparator: Export Portable Tool (share with others)"
+        ]
+    },
     // ═══════════════════════════════════════════════════════════════
     // SKILLS — Placeholders
     // ═══════════════════════════════════════════════════════════════
@@ -91,6 +108,16 @@ var CATALOG = [
         tags: ["scandump", "axon", "registers", "debug"],
         status: "coming-soon",
         version: "—",
+        author: "intel-gbe-sv"
+    },
+    {
+        id: "nvm-comparator",
+        title: "NVM Comparator Skill",
+        type: "skill",
+        description: "Copilot skill (SKILL.md) for reviewing a GbE NVM release. Bit-exact diff vs the last official image, checksum validation, functional-vs-bookkeeping split, and the review checklist. Field names merge the NVL-S NVM map with RTL-extracted FEXTNVM definitions, so bits the workbook marks 'Reserved' still resolve.",
+        tags: ["nvm", "diff", "review", "skill", "copilot", "checksum"],
+        status: "ready",
+        version: "1.0.0",
         author: "intel-gbe-sv"
     },
     {
@@ -195,6 +222,17 @@ var CATALOG = [
         version: "2.1",
         author: "intel-gbe-sv",
         downloadUrl: "downloads/smbus-parser-2.1.zip"
+    },
+    {
+        id: "nvm-comparator-tool",
+        title: "NVM Comparator (Standalone)",
+        type: "tool",
+        description: "Standalone GUI app \u2014 load two NVM images and get a comprehensive comparison report. Bit-exact diff with named fields, 0xBABA checksum validation, functional-vs-bookkeeping split, Cons/Corp SKU pairing, and HTML / Markdown export. Accepts release .zip, folders, .bin or .txt. Python 3.9+ only \u2014 no pip, no network, no repo.",
+        tags: ["nvm", "diff", "gui", "standalone", "checksum", "review"],
+        status: "ready",
+        version: "1.0.0",
+        author: "intel-gbe-sv",
+        downloadUrl: "downloads/nvm-comparator-tool-1.0.0.zip"
     },
     {
         id: "espi-analyzer",
