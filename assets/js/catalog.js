@@ -66,9 +66,9 @@ var CATALOG = [
         description: "Compare a candidate GbE NVM image against the last official release \u2014 bit-exact, with every changed bit named. Splits functional config bits from bookkeeping (version / EETRACK / checksum), validates the 0xBABA checksum, matches release zips SKU-for-SKU, and flags Cons-vs-Corp asymmetry. Bundles the skill, a desktop GUI, and an HTML report. No pip install.",
         tags: ["nvm", "diff", "nahum", "i219", "checksum", "review", "vsix"],
         status: "ready",
-        version: "1.0.0",
+        version: "1.0.1",
         author: "intel-gbe-sv",
-        downloadUrl: "downloads/nvm-comparator-1.0.0.vsix",
+        downloadUrl: "downloads/nvm-comparator-1.0.1.vsix",
         commands: [
             "NVM Comparator: Compare Two Images (HTML Report)",
             "NVM Comparator: Open Comparator (GUI)",
@@ -230,9 +230,9 @@ var CATALOG = [
         description: "Standalone GUI app \u2014 load two NVM images and get a comprehensive comparison report. Bit-exact diff with named fields, 0xBABA checksum validation, functional-vs-bookkeeping split, Cons/Corp SKU pairing, and HTML / Markdown export. Accepts release .zip, folders, .bin or .txt. Python 3.9+ only \u2014 no pip, no network, no repo.",
         tags: ["nvm", "diff", "gui", "standalone", "checksum", "review"],
         status: "ready",
-        version: "1.0.0",
+        version: "1.0.1",
         author: "intel-gbe-sv",
-        downloadUrl: "downloads/nvm-comparator-tool-1.0.0.zip"
+        downloadUrl: "downloads/nvm-comparator-tool-1.0.1.zip"
     },
     {
         id: "espi-analyzer",
