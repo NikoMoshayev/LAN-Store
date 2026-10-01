@@ -77,6 +77,22 @@ var CATALOG = [
             "NVM Comparator: Export Portable Tool (share with others)"
         ]
     },
+    {
+        id: "driver-log-decoder",
+        title: "Driver Log Decoder (ETL / WPP)",
+        type: "extension",
+        description: "Right-click an .etl, enter the driver version — the extension fetches the matching PDB from \\\\ccdsrv12\\lansw\\Drivers, runs tracepdb + tracefmt (bundled), and writes a decoded .txt plus a summary with first error and top errors/warnings. E1D / E1DN / E2F / E2FN. Stdlib Python only.",
+        tags: ["driver", "etl", "wpp", "pdb", "tracefmt", "netadapter", "vsix"],
+        status: "ready",
+        version: "0.1.0",
+        author: "intel-gbe-sv",
+        downloadUrl: "downloads/driver-log-decoder-0.1.0.vsix",
+        commands: [
+            "Driver Log: Decode ETL (fetch PDB + tracefmt)",
+            "Driver Log: List Driver Versions on Share",
+            "Driver Log: Install Skill into Workspace"
+        ]
+    },
     // ═══════════════════════════════════════════════════════════════
     // SKILLS — Placeholders
     // ═══════════════════════════════════════════════════════════════
@@ -88,16 +104,6 @@ var CATALOG = [
         tags: ["nvm", "nahum", "skill", "copilot"],
         status: "ready",
         version: "1.0.0",
-        author: "intel-gbe-sv"
-    },
-    {
-        id: "driver-log-parser",
-        title: "Driver Log Parser",
-        type: "skill",
-        description: "Parse GbE driver / firmware / kernel logs into structured timelines. Supports ETL/WPP, dmesg, elog.gz, evtx, and plain text. Extracts error/warning frames and identifies first-fault.",
-        tags: ["driver", "logs", "etl", "wpp", "dmesg"],
-        status: "coming-soon",
-        version: "—",
         author: "intel-gbe-sv"
     },
     {
